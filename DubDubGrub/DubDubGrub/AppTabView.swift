@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppTabView: View {
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.tertiaryLabel
+//        UITabBar.appearance().backgroundColor = UIColor.tertiaryLabel
     }
     var body: some View {
         TabView {
