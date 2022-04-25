@@ -13,7 +13,6 @@ struct LocationDetailView: View {
                    GridItem(.flexible())]
     
     var body: some View {
-        NavigationView {
             VStack(spacing: 16) {
                 Image("default-banner-asset")
                     .resizable()
@@ -30,8 +29,8 @@ struct LocationDetailView: View {
                 Text("This is test description. This is test description. This is test description. This is test description. This is test description. This is test description.")
                     .lineLimit(3)
                     .minimumScaleFactor(0.75)
-                    .padding(.horizontal
-                    )
+                    .frame(height: 70)
+                    .padding(.horizontal)
                 
                 ZStack {
                     Capsule()
@@ -68,29 +67,32 @@ struct LocationDetailView: View {
                     .bold()
                     .font(.title2)
                 
-                LazyVGrid(columns: columns) {
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
-                    FirstNameAvatarView(firstName: "Jun")
+                ScrollView {
+                    LazyVGrid(columns: columns) {
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(firstName: "Jun")
+                    }
                 }
                 
                 Spacer()
             }
             .navigationTitle("shop name")
             .navigationBarTitleDisplayMode(.inline)
-        }
     }
 }
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetailView()
+        NavigationView {
+            LocationDetailView()
+        }
     }
 }
 
