@@ -17,8 +17,6 @@ struct LocationListView: View {
                     } label: {
                         LocationCell()
                     }
-
-
                 }
             }
             .navigationTitle("Grub Spots")
