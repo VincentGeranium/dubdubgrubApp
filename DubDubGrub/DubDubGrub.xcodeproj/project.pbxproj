@@ -23,6 +23,7 @@
 		BF73B98228177D2D00044EA9 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73B98128177D2D00044EA9 /* DDGButton.swift */; };
 		BF768CF82814F28A0016FD56 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF768CF72814F28A0016FD56 /* MainTabView.swift */; };
 		BF96E7372815FC4400BBC673 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E7362815FC4400BBC673 /* LocationDetailView.swift */; };
+		BFFAB5452817EC0D00FDD5B5 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAB5442817EC0D00FDD5B5 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BF73B98128177D2D00044EA9 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 		BF768CF72814F28A0016FD56 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BF96E7362815FC4400BBC673 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		BFFAB5442817EC0D00FDD5B5 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		BF4ADB04281403C200F843A9 /* DubDubGrub */ = {
 			isa = PBXGroup;
 			children = (
+				BFFAB5432817EBE900FDD5B5 /* Model */,
 				BF73B9832817810B00044EA9 /* Extensions */,
 				BF73B9842817813200044EA9 /* Views */,
 				BF4ADB132814047C00F843A9 /* DubDubGrub.entitlements */,
@@ -152,6 +155,14 @@
 				BF73B98128177D2D00044EA9 /* DDGButton.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		BFFAB5432817EBE900FDD5B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFFAB5442817EC0D00FDD5B5 /* DDGLocation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				BF73B97C2817750000044EA9 /* AvatarView.swift in Sources */,
 				BF73B98228177D2D00044EA9 /* DDGButton.swift in Sources */,
 				BF73B98028177A6500044EA9 /* View+.swift in Sources */,
+				BFFAB5452817EC0D00FDD5B5 /* DDGLocation.swift in Sources */,
 				BF4ADB1E2814086600F843A9 /* LocationListView.swift in Sources */,
 				BF4ADB1A281407D400F843A9 /* AppTabView.swift in Sources */,
 				BF768CF82814F28A0016FD56 /* MainTabView.swift in Sources */,
