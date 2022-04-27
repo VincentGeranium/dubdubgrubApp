@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF02BC472819067E00A0240F /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BC462819067E00A0240F /* CloudKitManager.swift */; };
+		BF02BC492819089100A0240F /* RecordTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BC482819089100A0240F /* RecordTypeManager.swift */; };
+		BF02BC4B28191C8300A0240F /* CKRecord+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BC4A28191C8300A0240F /* CKRecord+.swift */; };
 		BF2743EC2818D90500992DC3 /* DDGProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2743EB2818D90500992DC3 /* DDGProfile.swift */; };
 		BF2743EE2818DDBF00992DC3 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2743ED2818DDBF00992DC3 /* MockData.swift */; };
 		BF4ADB06281403C200F843A9 /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4ADB05281403C200F843A9 /* DubDubGrubApp.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF02BC462819067E00A0240F /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		BF02BC482819089100A0240F /* RecordTypeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTypeManager.swift; sourceTree = "<group>"; };
+		BF02BC4A28191C8300A0240F /* CKRecord+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+.swift"; sourceTree = "<group>"; };
 		BF2743EB2818D90500992DC3 /* DDGProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGProfile.swift; sourceTree = "<group>"; };
 		BF2743ED2818DDBF00992DC3 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		BF4ADB02281403C200F843A9 /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF02BC452819066200A0240F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BF02BC462819067E00A0240F /* CloudKitManager.swift */,
+				BF02BC482819089100A0240F /* RecordTypeManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		BF4ADAF9281403C200F843A9 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +99,7 @@
 		BF4ADB04281403C200F843A9 /* DubDubGrub */ = {
 			isa = PBXGroup;
 			children = (
+				BF02BC452819066200A0240F /* Managers */,
 				BFFAB5432817EBE900FDD5B5 /* Model */,
 				BF73B9832817810B00044EA9 /* Extensions */,
 				BF73B9842817813200044EA9 /* Views */,
@@ -116,6 +132,7 @@
 			children = (
 				BF4ADB172814078000F843A9 /* Color+.swift */,
 				BF73B97F28177A6500044EA9 /* View+.swift */,
+				BF02BC4A28191C8300A0240F /* CKRecord+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,11 +262,13 @@
 				BF4ADB1C2814083100F843A9 /* LocationMapView.swift in Sources */,
 				BF96E7372815FC4400BBC673 /* LocationDetailView.swift in Sources */,
 				BF2743EC2818D90500992DC3 /* DDGProfile.swift in Sources */,
+				BF02BC472819067E00A0240F /* CloudKitManager.swift in Sources */,
 				BF73B97C2817750000044EA9 /* AvatarView.swift in Sources */,
 				BF73B98228177D2D00044EA9 /* DDGButton.swift in Sources */,
 				BF73B98028177A6500044EA9 /* View+.swift in Sources */,
 				BFFAB5452817EC0D00FDD5B5 /* DDGLocation.swift in Sources */,
 				BF4ADB1E2814086600F843A9 /* LocationListView.swift in Sources */,
+				BF02BC492819089100A0240F /* RecordTypeManager.swift in Sources */,
 				BF4ADB1A281407D400F843A9 /* AppTabView.swift in Sources */,
 				BF768CF82814F28A0016FD56 /* MainTabView.swift in Sources */,
 				BF73B97A2817746D00044EA9 /* LocationCell.swift in Sources */,
@@ -257,6 +276,7 @@
 				BF2743EE2818DDBF00992DC3 /* MockData.swift in Sources */,
 				BF73B97E28177A2C00044EA9 /* CustomModifiers.swift in Sources */,
 				BF4ADB06281403C200F843A9 /* DubDubGrubApp.swift in Sources */,
+				BF02BC4B28191C8300A0240F /* CKRecord+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

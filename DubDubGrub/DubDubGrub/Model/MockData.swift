@@ -11,7 +11,7 @@ import CloudKit
 struct MockData {
     
     static var location: CKRecord {
-        let record = CKRecord(recordType: "DDGLocation")
+        let record = CKRecord(recordType: RecordTypeManager.location)
         record[DDGLocation.kName] = "다울 하우스"
         record[DDGLocation.kAddress] = "서울특별시 성동구 송정4가길 47"
         record[DDGLocation.kDescription] = "This is test description. how long to make it to test the 3 lines. anyway this is iOS engineer Vincent's house..."
