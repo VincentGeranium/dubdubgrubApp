@@ -9,10 +9,13 @@ import SwiftUI
 import MapKit
 
 struct LocationMapView: View {
+    
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.5642135,
                                                                                   longitude: 127.0016985),
                                                    span: MKCoordinateSpan(latitudeDelta: 0.01,
                                                                           longitudeDelta: 0.01))
+    
+    @State private var alertItem: AlertItem?
     
     var body: some View {
         ZStack{
@@ -26,13 +29,16 @@ struct LocationMapView: View {
                 Spacer()
             }
         }
+        .alert(item: $alertItem, content: { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+        })
         .onAppear {
             CloudKitManager.getLocations { result in
                 switch result {
                 case .success(let locations):
                     print(locations)
-                case .failure(let error):
-                    print(error.localizedDescription)
+                case .failure(_):
+                    alertItem = AlertContext.unableToGetLocation
                 }
             }
         }

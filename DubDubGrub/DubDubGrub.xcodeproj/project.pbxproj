@@ -27,6 +27,7 @@
 		BF73B98028177A6500044EA9 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73B97F28177A6500044EA9 /* View+.swift */; };
 		BF73B98228177D2D00044EA9 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73B98128177D2D00044EA9 /* DDGButton.swift */; };
 		BF768CF82814F28A0016FD56 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF768CF72814F28A0016FD56 /* MainTabView.swift */; };
+		BF911531281959C700FD60DE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF911530281959C700FD60DE /* AlertView.swift */; };
 		BF96E7372815FC4400BBC673 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E7362815FC4400BBC673 /* LocationDetailView.swift */; };
 		BFFAB5452817EC0D00FDD5B5 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAB5442817EC0D00FDD5B5 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		BF73B97F28177A6500044EA9 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		BF73B98128177D2D00044EA9 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 		BF768CF72814F28A0016FD56 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		BF911530281959C700FD60DE /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		BF96E7362815FC4400BBC673 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		BFFAB5442817EC0D00FDD5B5 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				BF73B97B2817750000044EA9 /* AvatarView.swift */,
 				BF768CF72814F28A0016FD56 /* MainTabView.swift */,
 				BF73B98128177D2D00044EA9 /* DDGButton.swift */,
+				BF911530281959C700FD60DE /* AlertView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				BF96E7372815FC4400BBC673 /* LocationDetailView.swift in Sources */,
 				BF2743EC2818D90500992DC3 /* DDGProfile.swift in Sources */,
 				BF02BC472819067E00A0240F /* CloudKitManager.swift in Sources */,
+				BF911531281959C700FD60DE /* AlertView.swift in Sources */,
 				BF73B97C2817750000044EA9 /* AvatarView.swift in Sources */,
 				BF73B98228177D2D00044EA9 /* DDGButton.swift in Sources */,
 				BF73B98028177A6500044EA9 /* View+.swift in Sources */,
