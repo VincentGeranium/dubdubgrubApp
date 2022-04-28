@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 
-final class LocationMapViewModel: ObservableObject {
+final class LocationMapViewModel: NSObject, ObservableObject {
 
     @Published var alertItem: AlertItem?
     
@@ -22,6 +22,8 @@ final class LocationMapViewModel: ObservableObject {
             longitudeDelta: 0.04
         )
     )
+    
+    var deviceLocationManager: CLLocationManager?
 }
 
 extension LocationMapViewModel {
@@ -36,5 +38,46 @@ extension LocationMapViewModel {
                 }
             }
         }
+    }
+    
+    func isLocationSevicesEnable() {
+        if CLLocationManager.locationServicesEnabled() == true {
+            deviceLocationManager = CLLocationManager()
+            deviceLocationManager?.delegate = self
+            
+            // this is default desiredAccuracy
+            deviceLocationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        } else {
+            // show an alert
+            alertItem = AlertContext.locationDisabled
+        }
+    }
+    
+    // User permission
+    private func checkLocationAuthorization() {
+        guard let deviceLocationManager = deviceLocationManager else { return }
+        
+        switch deviceLocationManager.authorizationStatus {
+        case .notDetermined:
+            deviceLocationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // show alert
+            alertItem = AlertContext.locationRestricted
+        case .denied:
+            // show alert
+            alertItem = AlertContext.locationDenied
+        case .authorizedAlways:
+            break
+        case .authorizedWhenInUse:
+            break
+        @unknown default:
+            break
+        }
+    }
+}
+
+extension LocationMapViewModel: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
     }
 }
