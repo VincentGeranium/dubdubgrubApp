@@ -7,6 +7,7 @@
 
 import Foundation
 import CloudKit
+import UIKit
 
 struct DDGLocation: Identifiable {
     static let kName: String = "name"
@@ -38,5 +39,15 @@ struct DDGLocation: Identifiable {
         self.location = record[DDGLocation.kLocation] as? CLLocation ?? CLLocation(latitude: 0, longitude: 0)
         self.websiteURL = record[DDGLocation.kWebsiteURL] as? String ?? "N/A"
         self.phoneNumber = record[DDGLocation.kPhoneNumber] as? String ?? "N/A"
+    }
+    
+    func createSquareImage() -> UIImage {
+        guard let squareAsset = squareAsset else { return ImageDimension.getPlaceholder(for: .square) }
+        return squareAsset.convertToUIImage(in: .square)
+    }
+    
+    func createBannerImage() -> UIImage {
+        guard let bannerAsset = bannerAsset else { return ImageDimension.getPlaceholder(for: .banner) }
+        return bannerAsset.convertToUIImage(in: .banner)
     }
 }
