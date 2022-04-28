@@ -15,11 +15,11 @@ final class LocationMapViewModel: ObservableObject {
     
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
-            latitude: 37.5642135,
-            longitude: 127.0016985
+            latitude: 37.539925,
+            longitude: 127.070625
         ), span: MKCoordinateSpan(
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01
+            latitudeDelta: 0.04,
+            longitudeDelta: 0.04
         )
     )
 }
