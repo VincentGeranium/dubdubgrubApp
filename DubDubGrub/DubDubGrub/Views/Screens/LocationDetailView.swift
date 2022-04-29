@@ -64,15 +64,15 @@ struct LocationDetailView: View {
                 
                 ScrollView {
                     LazyVGrid(columns: columns) {
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
-                        FirstNameAvatarView(firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
+                        FirstNameAvatarView(image: PlaceholderImageManager.defaultAvatar, firstName: "Jun")
                     }
                 }
                 
@@ -111,11 +111,13 @@ struct LocationActionButton: View {
 }
 
 struct FirstNameAvatarView: View {
+    var image: UIImage
+    
     var firstName: String
     
     var body: some View {
         VStack {
-            AvatarView(size: 64)
+            AvatarView(size: 64, image: image)
             
             Text(firstName)
                 .bold()

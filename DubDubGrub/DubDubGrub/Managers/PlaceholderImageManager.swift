@@ -9,28 +9,37 @@ import Foundation
 import UIKit
 
 enum PlaceholderImageManager {
-    static let defaultAvatar = UIImage(named: "default-avatar")
-    static let defaultSquareAsset = UIImage(named: "default-square-asset")
-    static let dafaultBannerAsset = UIImage(named: "default-banner-asset")
+    static var defaultAvatar: UIImage {
+        guard let image = UIImage(named: "default-avatar") else {
+            fatalError()
+        }
+        return image
+    }
+    
+    static var defaultSquareAsset: UIImage {
+        guard let image = UIImage(named: "default-square-asset") else {
+            fatalError()
+        }
+        return image
+    }
+    
+    static var defaultBannerAsset: UIImage {
+        guard let image = UIImage(named: "default-banner-asset") else {
+            fatalError()
+        }
+        return image
+    }
 }
 
 enum ImageDimension {
     case square, banner
     
-    static func getPlaceholder(for dimension: ImageDimension) -> UIImage {
-        guard let defaultSquareAsset = PlaceholderImageManager.dafaultBannerAsset else {
-            fatalError()
-        }
-        
-        guard let defaultBannerAsset = PlaceholderImageManager.dafaultBannerAsset else {
-            fatalError()
-        }
-        
+    static func getPlaceholder(for dimension: ImageDimension) -> UIImage {        
         switch dimension {
         case .square:
-            return defaultSquareAsset
+            return PlaceholderImageManager.defaultSquareAsset
         case .banner:
-            return defaultBannerAsset
+            return PlaceholderImageManager.defaultBannerAsset
         }
     }
 }

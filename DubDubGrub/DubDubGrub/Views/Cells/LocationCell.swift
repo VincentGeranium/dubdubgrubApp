@@ -30,11 +30,11 @@ struct LocationCell: View {
 //                    .background(Color.red)
                     
                 HStack() {
-                    AvatarView(size: 35)
-                    AvatarView(size: 35)
-                    AvatarView(size: 35)
-                    AvatarView(size: 35)
-                    AvatarView(size: 35)
+                    AvatarView(size: 35, image: PlaceholderImageManager.defaultAvatar)
+                    AvatarView(size: 35, image: PlaceholderImageManager.defaultAvatar)
+                    AvatarView(size: 35, image: PlaceholderImageManager.defaultAvatar)
+                    AvatarView(size: 35, image: PlaceholderImageManager.defaultAvatar)
+                    AvatarView(size: 35, image: PlaceholderImageManager.defaultAvatar)
                 }
             }
             .padding(.leading)
