@@ -10,13 +10,16 @@ import SwiftUI
 import UIKit
 
 struct OnboardView: View {
+    
+    @Binding var isShowingOnBoardView: Bool
+    
     var body: some View {
         //MARK: - Main Structure
         VStack {
             HStack {
                 Spacer()
                 Button {
-                    
+                    isShowingOnBoardView = false
                 } label: {
                     XDismissButton()
                 }
@@ -79,6 +82,6 @@ struct OnboardInfoView: View {
 
 struct OnboardView_Previewer: PreviewProvider {
     static var previews: some View {
-        OnboardView()
+        OnboardView(isShowingOnBoardView: .constant(true))
     }
 }

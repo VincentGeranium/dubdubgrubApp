@@ -7,9 +7,12 @@
 
 import Foundation
 import MapKit
+import UIKit
 
 
 final class LocationMapViewModel: NSObject, ObservableObject {
+    
+    @Published var isShowingOnBoardingView: Bool = false
 
     @Published var alertItem: AlertItem?
     
@@ -24,9 +27,24 @@ final class LocationMapViewModel: NSObject, ObservableObject {
     )
     
     var deviceLocationManager: CLLocationManager?
+    
+    let kHasSeenOnBoardView: String = "hasSeenOnBoardView"
+    
+    var hasSeenOnBoardView: Bool {
+        return UserDefaults.standard.bool(forKey: kHasSeenOnBoardView)
+    }
 }
 
 extension LocationMapViewModel {
+    func runStartupChecks() {
+        if !hasSeenOnBoardView {
+            isShowingOnBoardingView = true
+            UserDefaults.standard.set(true, forKey: kHasSeenOnBoardView)
+        } else {
+            isLocationSevicesEnable()
+        }
+    }
+    
     func getLocations(for locationManager: LocationManager) {
         CloudKitManager.getLocations { [weak self] result in
             DispatchQueue.main.async {
