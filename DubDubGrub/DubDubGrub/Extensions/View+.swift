@@ -16,4 +16,11 @@ extension View {
     func bioEditorStyle() -> some View {
         return self.modifier(BioEditStyle())
     }
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                        to: nil,
+                                        from: nil,
+                                        for: nil
+        )
+    }
 }

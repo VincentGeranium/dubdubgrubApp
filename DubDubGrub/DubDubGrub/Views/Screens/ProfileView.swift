@@ -14,6 +14,7 @@ struct ProfileView: View {
     @State private var bio = ""
     @State private var avatar = PlaceholderImageManager.defaultAvatar
     @State private var isShowingPhotoPicker = false
+    @State private var alertItem: AlertItem?
     
     var body: some View {
         VStack {
@@ -58,7 +59,7 @@ struct ProfileView: View {
             Spacer()
             
             Button {
-                
+                createProfile()
             } label: {
                 DDGButton(title: "Create Profile", backgroundColor: .brandPrimary)
             }
@@ -66,6 +67,16 @@ struct ProfileView: View {
 
         }
         .navigationTitle("Profile")
+        .toolbar(content: {
+            Button {
+                dismissKeyboard()
+            } label: {
+                Image(systemName: "keyboard.chevron.compact.down")
+            }
+        })
+        .alert(item: $alertItem, content: { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+        })
         .sheet(isPresented: $isShowingPhotoPicker) {
             PhotoPicker(image: $avatar)
         }
@@ -121,3 +132,30 @@ struct CharactersRemainView: View {
 }
 
 
+// MARK: - extension for func
+extension ProfileView {
+    func createProfile() {
+        guard isValidProfile() else {
+            // show alert
+            alertItem = AlertContext.invalidProfile
+            
+            return
+        }
+        
+        // create our profile send it up to cloudkit
+    }
+    
+    func isValidProfile() -> Bool {
+        
+        guard !firstName.isEmpty,
+              !lastName.isEmpty,
+              !companyName.isEmpty,
+              !bio.isEmpty,
+              avatar != PlaceholderImageManager.defaultAvatar,
+              bio.count < 100 else  {
+            return false
+        }
+        
+        return true
+    }
+}
